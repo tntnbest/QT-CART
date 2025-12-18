@@ -16,6 +16,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -36,15 +37,16 @@ public:
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_3;
+    QSpacerItem *horizontalSpacer;
     QLabel *label;
     QTableWidget *tableCart;
     QGridLayout *gridLayout;
-    QLabel *labelTotalPriceValue;
-    QPushButton *btnPay;
     QLabel *labelTotalPrice;
-    QPushButton *btnGuideMode;
     QLabel *label_5;
     QLabel *label_4;
+    QPushButton *btnPay;
+    QPushButton *btnGuideMode;
+    QLabel *labelTotalPriceValue;
 
     void setupUi(QWidget *PageCart)
     {
@@ -98,16 +100,21 @@ public:
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName("verticalLayout_5");
         horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(10);
+        horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(-1, 0, -1, 0);
         label_3 = new QLabel(PageCart);
         label_3->setObjectName("label_3");
-        label_3->setStyleSheet(QString::fromUtf8("font: 20pt \"Ria Sans\";\n"
+        label_3->setMinimumSize(QSize(215, 0));
+        label_3->setStyleSheet(QString::fromUtf8("font: 15pt \"Ria Sans\";\n"
 "\n"
 "color: rgb(94, 92, 100);"));
 
         horizontalLayout_2->addWidget(label_3);
+
+        horizontalSpacer = new QSpacerItem(147, 0, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
 
         label = new QLabel(PageCart);
         label->setObjectName("label");
@@ -123,7 +130,7 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_2->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_2);
 
@@ -133,23 +140,28 @@ public:
         tableCart = new QTableWidget(PageCart);
         if (tableCart->columnCount() < 6)
             tableCart->setColumnCount(6);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableCart->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QFont font;
         font.setFamilies({QString::fromUtf8("Ria Sans")});
-        font.setItalic(true);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        __qtablewidgetitem->setFont(font);
+        tableCart->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Ria Sans")});
+        font1.setItalic(false);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        __qtablewidgetitem1->setFont(font);
+        __qtablewidgetitem1->setFont(font1);
         tableCart->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        __qtablewidgetitem2->setFont(font);
+        __qtablewidgetitem2->setFont(font1);
         tableCart->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setFont(font);
         tableCart->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setFont(font);
         tableCart->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        __qtablewidgetitem5->setFont(font);
+        __qtablewidgetitem5->setFont(font1);
         tableCart->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         tableCart->setObjectName("tableCart");
         tableCart->setFrameShape(QFrame::Shape::Box);
@@ -164,13 +176,33 @@ public:
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(0);
         gridLayout->setObjectName("gridLayout");
-        labelTotalPriceValue = new QLabel(PageCart);
-        labelTotalPriceValue->setObjectName("labelTotalPriceValue");
-        labelTotalPriceValue->setStyleSheet(QString::fromUtf8("font: 30pt \"Ria Sans\";\n"
+        labelTotalPrice = new QLabel(PageCart);
+        labelTotalPrice->setObjectName("labelTotalPrice");
+        labelTotalPrice->setMaximumSize(QSize(300, 169));
+        labelTotalPrice->setStyleSheet(QString::fromUtf8("font: 30pt \"Ria Sans\";\n"
 "background-color: rgb(119, 118, 123);\n"
-"color: rgb(255, 255, 255);"));
+"color: rgb(255, 255, 255);\n"
+""));
 
-        gridLayout->addWidget(labelTotalPriceValue, 1, 2, 1, 1);
+        gridLayout->addWidget(labelTotalPrice, 0, 1, 1, 1);
+
+        label_5 = new QLabel(PageCart);
+        label_5->setObjectName("label_5");
+        label_5->setMinimumSize(QSize(0, 0));
+        label_5->setStyleSheet(QString::fromUtf8("background-color: rgb(119, 118, 123);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+
+        gridLayout->addWidget(label_5, 0, 2, 1, 1);
+
+        label_4 = new QLabel(PageCart);
+        label_4->setObjectName("label_4");
+        label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(119, 118, 123);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 30pt \"Ria Sans\";\n"
+""));
+
+        gridLayout->addWidget(label_4, 1, 1, 1, 1);
 
         btnPay = new QPushButton(PageCart);
         btnPay->setObjectName("btnPay");
@@ -200,16 +232,6 @@ public:
 
         gridLayout->addWidget(btnPay, 0, 3, 1, 1);
 
-        labelTotalPrice = new QLabel(PageCart);
-        labelTotalPrice->setObjectName("labelTotalPrice");
-        labelTotalPrice->setMaximumSize(QSize(300, 169));
-        labelTotalPrice->setStyleSheet(QString::fromUtf8("font: 30pt \"Ria Sans\";\n"
-"background-color: rgb(119, 118, 123);\n"
-"color: rgb(255, 255, 255);\n"
-""));
-
-        gridLayout->addWidget(labelTotalPrice, 0, 1, 1, 1);
-
         btnGuideMode = new QPushButton(PageCart);
         btnGuideMode->setObjectName("btnGuideMode");
         btnGuideMode->setMinimumSize(QSize(145, 56));
@@ -233,22 +255,13 @@ public:
 
         gridLayout->addWidget(btnGuideMode, 1, 3, 1, 1);
 
-        label_5 = new QLabel(PageCart);
-        label_5->setObjectName("label_5");
-        label_5->setMinimumSize(QSize(0, 0));
-        label_5->setStyleSheet(QString::fromUtf8("background-color: rgb(119, 118, 123);\n"
-"color: rgb(255, 255, 255);\n"
-""));
+        labelTotalPriceValue = new QLabel(PageCart);
+        labelTotalPriceValue->setObjectName("labelTotalPriceValue");
+        labelTotalPriceValue->setStyleSheet(QString::fromUtf8("font: 30pt \"Ria Sans\";\n"
+"background-color: rgb(119, 118, 123);\n"
+"color: rgb(255, 255, 255);"));
 
-        gridLayout->addWidget(label_5, 0, 2, 1, 1);
-
-        label_4 = new QLabel(PageCart);
-        label_4->setObjectName("label_4");
-        label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(119, 118, 123);\n"
-"color: rgb(255, 255, 255);\n"
-""));
-
-        gridLayout->addWidget(label_4, 1, 1, 1, 1);
+        gridLayout->addWidget(labelTotalPriceValue, 1, 2, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -282,12 +295,12 @@ public:
         ___qtablewidgetitem4->setText(QCoreApplication::translate("PageCart", "\352\270\210\354\225\241", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tableCart->horizontalHeaderItem(5);
         ___qtablewidgetitem5->setText(QCoreApplication::translate("PageCart", "\354\202\255\354\240\234", nullptr));
-        labelTotalPriceValue->setText(QCoreApplication::translate("PageCart", "                           0\354\233\220", nullptr));
-        btnPay->setText(QCoreApplication::translate("PageCart", "\352\262\260\354\240\234", nullptr));
         labelTotalPrice->setText(QCoreApplication::translate("PageCart", "\352\262\260\354\240\234\352\270\210\354\225\241", nullptr));
-        btnGuideMode->setText(QCoreApplication::translate("PageCart", "\354\203\201\355\222\210 \354\260\276\352\270\260\360\237\224\215", nullptr));
         label_5->setText(QString());
-        label_4->setText(QString());
+        label_4->setText(QCoreApplication::translate("PageCart", "0\354\233\220", nullptr));
+        btnPay->setText(QCoreApplication::translate("PageCart", "\352\262\260\354\240\234", nullptr));
+        btnGuideMode->setText(QCoreApplication::translate("PageCart", "\354\203\201\355\222\210 \354\260\276\352\270\260\360\237\224\215", nullptr));
+        labelTotalPriceValue->setText(QString());
     } // retranslateUi
 
 };

@@ -14,62 +14,37 @@ PageCart::PageCart(QWidget *parent) :
 {  ui->setupUi(this);
 
     ui->tableCart->setStyleSheet(
-        /* 전체 테이블 */
         "QTableWidget {"
         " background-color: #ffffff;"
-        " gridline-color: #e0e0e0;"
+        " border: none;"
         " font: 11pt \"Ria Sans\";"
-        " border: 1px solid #dcdcdc;"
-        " selection-color: black;"
         "}"
 
-        /* 셀 */
         "QTableWidget::item {"
-        " padding: 6px;"
+        " border-bottom: 1px solid #eeeeee;"
+        " padding: 12px;"
         "}"
 
-
-        /* 헤더 전체 */
-        "QHeaderView {"
-        " background-color: #f5f5f5;"
-        "}"
-
-        /* 헤더 셀 */
         "QHeaderView::section {"
-        " background-color: #f5f5f5;"
-        " color: #333;"
+        " background-color: #ffffff;"
+        " border: none;"
+        " border-bottom: 2px solid #f0f0f0;"
         " font: bold 11pt \"Ria Sans\";"
-        " border: 1px solid #dcdcdc;"
-        " padding: 6px;"
+        " padding: 10px;"
         "}"
 
-        /* 헤더 아래 구분선 제거 */
-        "QHeaderView::section:horizontal {"
-        " border-top: 0px;"
-        "}"
-
-        /* 스크롤바 (세로) */
         "QScrollBar:vertical {"
-        " width: 12px;"
-        " background: #f0f0f0;"
+        " width: 8px;"
+        " background: transparent;"
         "}"
-
         "QScrollBar::handle:vertical {"
-        " background: #c1c1c1;"
-        " border-radius: 6px;"
-        " min-height: 30px;"
-        "}"
-
-        "QScrollBar::handle:vertical:hover {"
-        " background: #a8a8a8;"
-        "}"
-
-        "QScrollBar::add-line:vertical,"
-        "QScrollBar::sub-line:vertical {"
-        " height: 0px;"
+        " background: #d0d0d0;"
+        " border-radius: 4px;"
         "}"
         );
 
+
+    ui->tableCart->setSelectionMode(QAbstractItemView::NoSelection);
 
 
     // 1) 바코드 입력용 숨겨진 QLineEdit (GUI에는 안 보임)
@@ -117,6 +92,7 @@ void PageCart::initDummyItems()
 
         // 상품명
         ui->tableCart->setItem(row, 0, new QTableWidgetItem(names[row]));
+
         // 개수
         ui->tableCart->setItem(row, 1, new QTableWidgetItem("0"));
         // 금액

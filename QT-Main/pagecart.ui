@@ -165,7 +165,25 @@ color: rgb(94, 92, 100);</string>
          </property>
          <column>
           <property name="text">
-           <string>상품명</string>
+           <string>상품</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Ria Sans</family>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignLeading|AlignVCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="font">
+           <font>
+            <family>Ria Sans</family>
+           </font>
           </property>
          </column>
          <column>
@@ -175,7 +193,7 @@ color: rgb(94, 92, 100);</string>
           <property name="font">
            <font>
             <family>Ria Sans</family>
-            <italic>true</italic>
+            <italic>false</italic>
            </font>
           </property>
          </column>
@@ -186,7 +204,7 @@ color: rgb(94, 92, 100);</string>
           <property name="font">
            <font>
             <family>Ria Sans</family>
-            <italic>true</italic>
+            <italic>false</italic>
            </font>
           </property>
          </column>
@@ -194,10 +212,20 @@ color: rgb(94, 92, 100);</string>
           <property name="text">
            <string>-</string>
           </property>
+          <property name="font">
+           <font>
+            <family>Ria Sans</family>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>금액</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Ria Sans</family>
+           </font>
           </property>
          </column>
          <column>
@@ -207,7 +235,7 @@ color: rgb(94, 92, 100);</string>
           <property name="font">
            <font>
             <family>Ria Sans</family>
-            <italic>true</italic>
+            <italic>false</italic>
            </font>
           </property>
          </column>
@@ -352,7 +380,7 @@ background-color: rgb(119, 118, 123);
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>                           </string>
+          <string/>
          </property>
         </widget>
        </item>

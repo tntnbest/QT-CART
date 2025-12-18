@@ -94,5 +94,6 @@ DISTFILES +=
 
 RESOURCES += \
     cart_img.qrc \
+    cart_obj.qrc \
     image.qrc \
     maps.qrc

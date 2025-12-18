@@ -13,3 +13,9 @@ qrc_*
 Makefile
 .qmake.stash
 QTCart
+
+# Qt Design Studio / Qt Creator artifacts
+*.qtds
+
+# Build dirs
+QT-Main/build/
