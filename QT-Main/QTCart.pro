@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -65,7 +65,8 @@ SOURCES += \
     pageguide.cpp \
     pagepay.cpp \
     pagepay_card.cpp \
-    pagewelcome.cpp
+    pagewelcome.cpp \
+    uwbdriver.cpp
 
 HEADERS += \
     barcodescanner.h \
@@ -75,7 +76,8 @@ HEADERS += \
     pageguide.h \
     pagepay.h \
     pagepay_card.h \
-    pagewelcome.h
+    pagewelcome.h \
+    uwbdriver.h
 
 FORMS += \
     mainwidget.ui \
